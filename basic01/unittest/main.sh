@@ -1,36 +1,42 @@
 #!/bin/bash
-source ./../functions.sh
+source ./../common_lib.sh
 
-echo "Calling my_function from main.sh"
-my_function
+test_func()
+{
+  func_echo
+  func_parameters  value1 value2
+  assertEquals "1" "1"
+}
 
-
-my_function_paramters  value1 value2
-
-
-
-testAdd() {
-    result=$(add 2 3)
+test_add()
+{
+    result=$(func_add 2 3)
     assertEquals "5" "$result"
 }
 
-
-
-testSubtract() {
-    result=$(subtract 5 3)
+test_subtract()
+ {
+    result=$(func_subtract 5 3)
     assertEquals "2" "$result"
-   # assertEquals "1" "$result"
 }
 
 
-testSubtractxxx() {
-    my_function_return 5
-    status_code=$?
-    echo  "status_code=$status_code"
+test_return_code_success()
+{
+    func_return 5
+    return_code=$?
+    echo  "test_return_code_success return_code=$return_code"
+    assertEquals  "0"   "$return_code"
+}
 
-    assertEquals  "0"   "$status_code" 
+test_return_code_failure()
+{
+    func_return -1
+    return_code=$?
+    echo  "test_return_code_failure return_code=$return_code"
+    assertEquals  "1"   "$return_code"
 }
 
 
- 
+
  . ./../../shunit2/shunit2
