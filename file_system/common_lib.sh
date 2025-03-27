@@ -19,3 +19,13 @@ match() {
     rexp="${filter_name//\*/.*\\}"
     echo "$file_name" | grep -E "$rexp"
 }
+
+match_with_file() {
+    local file_path="${1}";
+    local filter_name="${2}";
+
+    file_name=$(basename "$file_path")
+    rexp="${filter_name//\*/.*\\}"
+    echo "$file_name" | grep -E "$rexp"
+}
+

@@ -27,4 +27,15 @@ test_match_not()
   assertNotEquals "0" "$result"
 }
 
+
+test_match_with_file()
+{
+  file_path="/home/thonglt/src/shell_script/file_system/unittest/main.sh"
+  filter_name="*.sh"
+  match_with_file "$file_path" "$filter_name"
+  result=$?
+  echo  "test_match result=$result"
+  assertEquals "0" "$result"
+}
+
  . ./../../shunit2/shunit2
