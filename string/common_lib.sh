@@ -44,5 +44,5 @@ match_with_file() {
 # count the number of words
 # echo -n "your string here" | wc -w
 
-# len of string
+# count the number of characters
 # echo -n "your_string_here" | wc -m
