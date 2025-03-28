@@ -24,3 +24,16 @@ exist_file()
     fi
     echo $return_code
 }
+
+read_file()
+{
+    local file_path="${1}";
+    data=""
+    while IFS= read -r line
+    do
+      #echo "$line"
+	  data="${data}${line}"
+    done < "$file_path"
+    echo $data
+
+}
