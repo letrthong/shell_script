@@ -12,15 +12,15 @@ func_shared_path()
 
 #
 # Usage: exist_file "file_path"
-# @return ENUM_FILE_EXIST exist  file
+# @return RET_FILE_EXIST exist  file
 #         RET_FILE_NOT_EXIST  not found
 #
 exist_file()
 {
     local file_path="${1}";
-    local return_code=$ENUM_FILE_NOT_EXIST
+    local return_code=$RET_FILE_NOT_EXIST
     if [ -f "$file_path" ]; then
-        return_code=$ENUM_FILE_EXIST
+        return_code=$RET_FILE_EXIST
     fi
     echo $return_code
 }
