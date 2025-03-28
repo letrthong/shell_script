@@ -35,5 +35,4 @@ read_file()
 	  data="${data}${line}"
     done < "$file_path"
     echo $data
-
 }
