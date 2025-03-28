@@ -4,28 +4,23 @@ source ./../shared_path.sh
 func_shared_path()
 {
     echo " Using shared path: $shared_path"
+
+    #Suppress the output of echo
+    echo "This will not be displayed" > /dev/null
 }
 
 
-# Pattern matching
-# @file_path="/home/thonglt/src/shell_script/file_system/unittest/main.sh"
-# @filter_name "*.sh"
-
-match() {
+#
+# Usage: "exist_file "file_path"
+# @return 1 exist  file
+#         0 not found
+#
+exist_file()
+{
     local file_path="${1}";
-    local filter_name="${2}";
-
-    file_name=$(echo $file_path | grep -o '[^/]*$')
-    rexp="${filter_name//\*/.*\\}"
-    echo "$file_name" | grep -E "$rexp"
+    local return_code=0
+    if [ -f "$file_path" ]; then
+        return_code=1
+    fi
+    echo $return_code
 }
-
-match_with_file() {
-    local file_path="${1}";
-    local filter_name="${2}";
-
-    file_name=$(basename "$file_path")
-    rexp="${filter_name//\*/.*\\}"
-    echo "$file_name" | grep -E "$rexp"
-}
-
