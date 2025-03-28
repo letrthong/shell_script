@@ -11,17 +11,16 @@ func_shared_path()
 
 
 #
-# Usage: "exist_file "file_path" 
-#         result=$(exist_file "./abc.sh")
-# @return 1 exist  file
-#         0 not found
+# Usage: "exist_file "file_path"
+# @return ENUM_FILE_EXIST exist  file
+#         RET_FILE_NOT_EXIST  not found
 #
 exist_file()
 {
     local file_path="${1}";
-    local return_code=0
+    local return_code=$ENUM_FILE_NOT_EXIST
     if [ -f "$file_path" ]; then
-        return_code=1
+        return_code=$ENUM_FILE_EXIST
     fi
     echo $return_code
 }
