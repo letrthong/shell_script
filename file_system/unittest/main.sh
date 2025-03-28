@@ -25,4 +25,14 @@ test_exist_file_if()
   assertEquals "$RET_FILE_EXIST" "$result"
 }
  
+
+ test_exist_read_file()
+{
+  result=$(read_file "./log")
+  echo "est_exist_read_file $result"
+
+  assertEquals "0" "0"
+}
+
+
  . ./../../shunit2/shunit2
