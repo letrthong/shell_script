@@ -42,7 +42,12 @@ test_exist_write_read_file()
   else
     echo "The strings are not equal."
   fi
-  assertEquals "0" "0"
+
+  for item in ${result[@]}; do 
+    echo "item=$item"
+    done
+
+  assertEquals "$data" "$result"
 }
 
 
