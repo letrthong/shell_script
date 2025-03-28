@@ -30,24 +30,12 @@ match_with_file() {
 }
 get_length()
 {
-  # Take the input string as the first argument
-  local string="${1}";
-   echo "${#string}" # Use ${#string} to get the length of the string
-
+  local string="${1}";  # Take the input string as the first argument
+  echo "${#string}" # Use ${#string} to get the length of the string
 }
-# counter=0
-# string="This is a sample string"
-# for word in $string; do
-#     echo $word
-#     let counter=counter+1
-# done
-# if [ $counter -eq  5 ]; then
-#     echo "Passed"
-# else
-#     echo ""
-# fi
 
-
-
-# count the number of characters
-# echo -n "your_string_here" | wc -m
+count_words()
+ {
+  local string="$1" # Take the input string as the first argument
+  echo "$string" | wc -w # Use wc -w to count the words in the string
+}

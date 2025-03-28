@@ -46,5 +46,13 @@ test_get_length()
     assertEquals "8" "$length"
 }
 
+test_count_words()
+{
+    string="Hello, how are you today?"
+    word_count=$(count_words  "$string")
+    assertEquals "5" "$word_count"
+}
+
+
 
  . ./../../shunit2/shunit2
