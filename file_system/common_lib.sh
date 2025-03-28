@@ -56,4 +56,12 @@ remount_disk()
 {
   mount -o remount,rw /
   #mount -o remount,ro /
+  # set -e
 }
+
+#  show_exec mount -o remount,rw /
+show_exec() {
+    echo "+ $@"
+    "$@"
+}
+
