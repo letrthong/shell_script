@@ -40,3 +40,9 @@ match_with_file() {
 # else
 #     echo ""
 # fi
+
+# count the number of words
+# echo -n "your string here" | wc -w
+
+# len of string
+# echo -n "your_string_here" | wc -m
