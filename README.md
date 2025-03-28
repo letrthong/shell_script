@@ -1,2 +1,2 @@
 # shell_script
-shell script on Linux
+The shell script on Linux
