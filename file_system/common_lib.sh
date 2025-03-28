@@ -11,7 +11,8 @@ func_shared_path()
 
 
 #
-# Usage: "exist_file "file_path"
+# Usage: "exist_file "file_path" 
+#         result=$(exist_file "./abc.sh")
 # @return 1 exist  file
 #         0 not found
 #
