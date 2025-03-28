@@ -38,4 +38,13 @@ test_match_with_file()
   assertEquals "0" "$result"
 }
 
+
+test_get_length()
+{
+    string="12345678"
+    length=$(get_length "$string")
+    assertEquals "8" "$length"
+}
+
+
  . ./../../shunit2/shunit2

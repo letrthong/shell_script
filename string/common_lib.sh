@@ -28,7 +28,13 @@ match_with_file() {
     rexp="${filter_name//\*/.*\\}"
     echo "$file_name" | grep -E "$rexp"
 }
+get_length()
+{
+  # Take the input string as the first argument
+  local string="${1}";
+   echo "${#string}" # Use ${#string} to get the length of the string
 
+}
 # counter=0
 # string="This is a sample string"
 # for word in $string; do
@@ -41,8 +47,7 @@ match_with_file() {
 #     echo ""
 # fi
 
-# count the number of words
-# echo -n "your string here" | wc -w
+
 
 # count the number of characters
 # echo -n "your_string_here" | wc -m
