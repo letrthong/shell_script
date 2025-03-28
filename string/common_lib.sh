@@ -29,3 +29,14 @@ match_with_file() {
     echo "$file_name" | grep -E "$rexp"
 }
 
+# counter=0
+# string="This is a sample string"
+# for word in $string; do
+#     echo $word
+#     let counter=counter+1
+# done
+# if [ $counter -eq  5 ]; then
+#     echo "Passed"
+# else
+#     echo ""
+# fi
