@@ -11,7 +11,7 @@ func_shared_path()
 
 
 #
-# Usage: "exist_file "file_path"
+# Usage: exist_file "file_path"
 # @return ENUM_FILE_EXIST exist  file
 #         RET_FILE_NOT_EXIST  not found
 #
