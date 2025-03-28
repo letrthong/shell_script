@@ -26,11 +26,22 @@ test_exist_file_if()
 }
  
 
- test_exist_read_file()
-{
-  result=$(read_file "./log")
-  echo "est_exist_read_file $result"
+test_exist_write_read_file()
+{ 
+  data="1234 4567"
+  file_name="./test"
 
+  write_file "$file_name"  "$data"
+
+  result=$(read_file "$file_name")
+  echo "test_exist_read_file $result"
+
+  # Compare the strings
+  if [ "$data" = "$result" ]; then
+    echo "The strings are equal."
+  else
+    echo "The strings are not equal."
+  fi
   assertEquals "0" "0"
 }
 
