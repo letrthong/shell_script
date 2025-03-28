@@ -36,3 +36,18 @@ read_file()
     done < "$file_path"
     echo $data
 }
+
+write_file()
+{
+    local file_path="${1}";
+    local data="${2}";
+    # Create the file and add some content
+    echo "$data" > $file_path
+
+    # Verify the file creation
+    if [ -f "$file_path" ]; then
+        echo "File $file_path created successfully."
+    else
+        echo "Failed to create file $file_path."
+    fi
+}
