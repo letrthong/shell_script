@@ -51,3 +51,9 @@ write_file()
         echo "Failed to create file $file_path."
     fi
 }
+
+remount_disk()
+{
+  mount -o remount,rw /
+  #mount -o remount,ro /
+}
