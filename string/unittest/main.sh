@@ -42,14 +42,14 @@ test_match_with_file()
 test_get_length()
 {
     string="12345678"
-    length=$(get_length "$string")
+    length=$(get_length_of_string "$string")
     assertEquals "8" "$length"
 }
 
 test_count_words()
 {
     string="Hello, how are you today?"
-    word_count=$(count_words  "$string")
+    word_count=$(count_words_of_string  "$string")
     assertEquals "5" "$word_count"
 }
 

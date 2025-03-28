@@ -29,13 +29,13 @@ match_with_file()
     echo "$file_name" | grep -E "$rexp"
 }
 
-get_length()
+get_length_of_string()
 {
   local string="${1}";  # Take the input string as the first argument
   echo "${#string}" # Use ${#string} to get the length of the string
 }
 
-count_words()
+count_words_of_string()
 {
   local string="$1" # Take the input string as the first argument
   echo "$string" | wc -w # Use wc -w to count the words in the string
