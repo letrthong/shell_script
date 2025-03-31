@@ -9,6 +9,28 @@ func_shared_path()
     echo "This will not be displayed" > /dev/null
 }
 
+# Function to get a random color
+get_random_color() {
+    colors=("31" "32" "33" "34" "35" "36" "37")
+    echo "${colors[$RANDOM % ${#colors[@]}]}"
+}
+
+# Function to echo text in random colors
+color_echo() {
+    text="$1"
+    for (( i=0; i<${#text}; i++ )); do
+        color=$(get_random_color)
+        echo -ne "\e[${color}m${text:$i:1}\e[0m"
+    done
+
+}
+
+error_echo() {
+    text="Error"
+    message="$1"
+    echo -e "\e[31m${text}\e[0m   ${message}"
+}
+
 
 #
 # Usage: exist_file "file_path"
