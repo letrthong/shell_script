@@ -3,6 +3,11 @@ source ./../common_lib.sh
 
 test_exist_file()
 {
+  color_echo "color_echo"
+
+  error_echo "hi"
+  error_echo "hi .."
+  
   result=$(exist_file "./main.sh")
   assertEquals "$RET_FILE_EXIST" "$result"
 }
