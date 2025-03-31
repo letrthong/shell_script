@@ -80,10 +80,5 @@ remount_disk()
   #mount -o remount,ro /
   # set -e
 }
-
-# show_exec mount -o remount,rw /
-# print_exec() {
-#     echo "+ $@"
-#     "$@"
-# }
+ 
 
