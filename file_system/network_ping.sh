@@ -51,12 +51,11 @@ else
 
     # Check link status using ethtool
     if ethtool "$iface" | grep -q "Link detected: yes"; then
-         # The network cable is plugged in and there is a physical link signal
         echo "Link status: '$iface' is UP."
     else
-        # The network cable is unplugged or damaged, or the switch or the device on the other end is powered off
         echo "Link status: '$iface' is DOWN."
     fi
+    traceroute "$des" 
 fi
 
 # Clean up temporary file
