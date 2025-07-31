@@ -14,6 +14,8 @@
 #
 #   Delete VLAN 30 and restore original IP:
 #     ./network_vlan.sh eth0 delete 30
+#   Tool
+#    sudo ethtool  eth0.30 
 #
 
 # Read arguments from command line
