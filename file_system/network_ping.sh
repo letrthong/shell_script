@@ -50,10 +50,11 @@ else
     grep -E "ping:|100% packet loss|unknown host|Network is unreachable|Name or service not known" /tmp/ping_output.txt
 
     # Check link status using ethtool
-    # The network cable is plugged in and there is a physical link signal
     if ethtool "$iface" | grep -q "Link detected: yes"; then
+         # The network cable is plugged in and there is a physical link signal
         echo "Link status: '$iface' is UP."
     else
+        # The network cable is unplugged or damaged, or the switch or the device on the other end is powered off
         echo "Link status: '$iface' is DOWN."
     fi
 fi
