@@ -51,6 +51,7 @@ else
 
     # Check link status using ethtool
     if ethtool "$iface" | grep -q "Link detected: yes"; then
+        # The network cable is connected and a physical link is detected.
         echo "Link status: '$iface' is UP."
     else
         echo "Link status: '$iface' is DOWN."
