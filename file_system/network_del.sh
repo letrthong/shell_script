@@ -56,7 +56,7 @@ fi
 # Delete IP if cli = del
 if [ "$cli" = "del" ]; then
     echo "Delete command received. Performing deletion..."
-    ip_addr=$(ip -4 addr show "$iface" | grep -oP '(?<=inet\\s)\\d+(\\.\\d+){3}/\\d+')
+    ip_addr=$(ifconfig "$iface" | grep 'inet ' | awk '{print $2}')
     if [ -z "$ip_addr" ]; then
         echo "No IPv4 address assigned to $iface."
     else
