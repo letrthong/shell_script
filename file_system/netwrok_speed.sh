@@ -7,7 +7,7 @@
 #sudo apt install c  
 #
 #ethtool eth0  -> speed
-#iperf3 -s
+#iperf3 -s (start server at A)
 #iperf3 -c <IP của máy A>
 #
 
